@@ -3,6 +3,8 @@ package com.aditya.dto;
 import com.aditya.enums.Gender;
 import com.aditya.enums.PetType;
 
+import java.util.Objects;
+
 public class PetDTO {
     private int id;
     private String name;
@@ -52,12 +54,22 @@ public class PetDTO {
 
     @Override
     public String toString() {
-        return "PetDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", gender=" + gender +
-                ", petType=" + petType +
-                ", ownerDTO=" + ownerDTO +
-                '}';
+        if (Objects.nonNull(ownerDTO)) {
+            return "PetDTO{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", gender=" + gender +
+                    ", petType=" + petType +
+                    ", ownerDTO=" + ownerDTO +
+                    '}';
+        } else {
+            return "PetDTO{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", gender=" + gender +
+                    ", petType=" + petType +
+                    '}';
+        }
+
     }
 }

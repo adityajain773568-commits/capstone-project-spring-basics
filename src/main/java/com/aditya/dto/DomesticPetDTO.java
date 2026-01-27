@@ -1,9 +1,8 @@
 package com.aditya.dto;
-
-
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class DomesticPetDTO extends PetDTO{
+public class DomesticPetDTO extends PetDTO {
     private LocalDate birthDate;
 
     public LocalDate getBirthDate() {
@@ -16,13 +15,24 @@ public class DomesticPetDTO extends PetDTO{
 
     @Override
     public String toString() {
-        return "PetDTO{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", gender=" + getGender() +
-                ", petType=" + getPetType() +
-                ", ownerDTO=" + getOwnerDTO() +
-                "birthDate=" + birthDate +
-                '}';
+        if (Objects.nonNull(getOwnerDTO())){
+            return "DomesticPetDTO{" +
+                    "id=" + getId() +
+                    ", name='" + getName() + '\'' +
+                    ", gender=" + getGender() +
+                    ", petType=" + getPetType() +
+                    ", birthDate=" + birthDate +
+                    ", ownerDTO=" + getOwnerDTO() +
+                    '}';
+        }else {
+            return "DomesticPetDTO{" +
+                    "id=" + getId() +
+                    ", name='" + getName() + '\'' +
+                    ", gender=" + getGender() +
+                    ", petType=" + getPetType() +
+                    ", birthDate=" + birthDate +
+                    '}';
+        }
+
     }
 }

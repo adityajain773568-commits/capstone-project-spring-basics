@@ -1,5 +1,7 @@
 package com.aditya.dto;
 
+import java.util.Objects;
+
 public class WildPetDTO extends PetDTO {
     private String birthPlace;
 
@@ -13,14 +15,25 @@ public class WildPetDTO extends PetDTO {
 
     @Override
     public String toString() {
-        return "WildPetDTO{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", gender=" + getGender() +
-                ", petType=" + getPetType() +
-                ", ownerDTO=" + getOwnerDTO() +
-                "birthPlace='" + birthPlace + '\'' +
-                '}';
+        if (Objects.nonNull(getOwnerDTO())){
+            return "WildPetDTO{" +
+                    "id=" + getId() +
+                    ", name='" + getName() + '\'' +
+                    ", gender=" + getGender() +
+                    ", petType=" + getPetType() +
+                    "birthPlace='" + birthPlace + '\'' +
+                    ", ownerDTO=" + getOwnerDTO() +
+                    '}';
+        }else{
+            return "WildPetDTO{" +
+                    "id=" + getId() +
+                    ", name='" + getName() + '\'' +
+                    ", gender=" + getGender() +
+                    ", petType=" + getPetType() +
+                    ", birthPlace='" + birthPlace + '\'' +
+                    '}';
+        }
+
     }
 
 }
