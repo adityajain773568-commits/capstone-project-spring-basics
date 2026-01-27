@@ -1,4 +1,5 @@
 package com.aditya.enums;
 
-public enum PetTypes {
+public enum PetType {
+    FISH, BIRD , CAT , DOG , RABBIT
 }
